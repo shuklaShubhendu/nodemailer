@@ -195,6 +195,21 @@ app.post('/api/send-welcome-email', async (req, res) => {
     res.status(500).json({ message: 'Failed to send welcome email.', error: error.message });
   }
 });
+//   const mailOptions = {
+//     from: `"${process.env.APP_NAME || 'Your Application'}" <${process.env.EMAIL_USER}>`,
+//     to: userEmail,
+//     subject: welcomeSubject,
+//     html: welcomeHtmlBody,
+//     replyTo: process.env.SUPPORT_EMAIL || process.env.EMAIL_USER
+//   };
+
+//   try {
+//     await sendGenericEmail(mailOptions);
+//     res.status(200).json({ message: `Welcome email sent successfully to ${userEmail}!` });
+//   } catch (error) {
+//     res.status(500).json({ message: 'Failed to send welcome email.', error: error.message });
+//   }
+// });
 
 app.listen(port, () => {
   console.log(`Backend server running at http://localhost:${port}`);
